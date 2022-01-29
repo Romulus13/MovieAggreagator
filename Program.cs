@@ -25,7 +25,7 @@ builder.Services.AddMemoryCache();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddTransient<IUnitOfWork, MovieAggregatorDbContext>();
-builder.Services.AddSingleton<ISearchFactory>(serviceProvider => new SearchClientFactory(serviceProvider.GetRequiredService<ILogger<SearchClientFactory>>()));
+builder.Services.AddSingleton<ISearchFactory>(serviceProvider => new SearchClientFactory(serviceProvider.GetRequiredService<ILogger<SearchClientFactory>>(), serviceProvider.GetRequiredService<IConfiguration>()));
 builder.Services.AddTransient<ISearchService, SearchService>();
 builder.Services.AddTransient<IImdbDataService, ImdbDataService>();
 builder.Services.AddTransient<IYoutubeDataService, YoutubeDataService>();
