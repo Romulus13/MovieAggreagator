@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="BusinessLayer\**" />
+    <Compile Remove="DataLayer\**" />
+    <Content Remove="BusinessLayer\**" />
+    <Content Remove="DataLayer\**" />
+    <EmbeddedResource Remove="BusinessLayer\**" />
+    <EmbeddedResource Remove="DataLayer\**" />
+    <None Remove="BusinessLayer\**" />
+    <None Remove="DataLayer\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.1">
@@ -17,7 +28,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj" />
+    <ProjectReference Include="BusinessLayer\BusinessLayer.csproj" />
+    <ProjectReference Include="DataLayer\DataLayer.csproj" />
   </ItemGroup>
 
 </Project>
